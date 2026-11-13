@@ -291,6 +291,7 @@
             ['.tutorial-card', 'reveal-scale'],
             ['.feature-card', 'reveal'],
             ['.download-links', 'reveal'],
+            ['.pubg-downloads', 'reveal'],
             ['.stat', 'reveal'],
             ['.root-card', 'reveal'],
             ['.hero-visual', 'reveal-right']
@@ -418,7 +419,7 @@
             }, 2500);
         }
 
-        document.querySelectorAll('.download-btn').forEach(function (btn) {
+        document.querySelectorAll('.download-btn, a.pubg-card, a.pubg-dl-btn').forEach(function (btn) {
             btn.addEventListener('click', function () {
                 showToast('Mengalihkan ke tautan unduhan resmi…');
             });
