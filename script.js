@@ -100,8 +100,92 @@
         });
     }
 
-    /* ---------- 4. Intro Overlay & Choice Modal ---------- */
+    /* ---------- 4. Intro Overlay, Welcome Sound & Choice Modal ---------- */
     let openChoiceModalFn = null;
+    let showToastFn = null;
+
+    const WELCOME_MSG = 'Selamat datang di Solana, jangan lupa simak video tutorialnya pelan-pelan.';
+    const welcomeAudio = typeof Audio !== 'undefined' ? new Audio('assets/welcome-voice.mp3') : null;
+    let welcomeAudioFailed = false;
+    let welcomePlayed = false;
+
+    if (welcomeAudio) {
+        welcomeAudio.preload = 'auto';
+        welcomeAudio.addEventListener('error', function () {
+            welcomeAudioFailed = true;
+            if (welcomePlayed) speakWelcomeFallback();
+        }, { once: true });
+    }
+
+    function playNotifChime() {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        try {
+            const ctx = new AudioCtx();
+            const now = ctx.currentTime;
+            [
+                { freq: 880, start: 0, end: 0.14 },
+                { freq: 1174.66, start: 0.08, end: 0.24 }
+            ].forEach(function (note) {
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(note.freq, now + note.start);
+                gain.gain.setValueAtTime(0.0001, now + note.start);
+                gain.gain.exponentialRampToValueAtTime(0.035, now + note.start + 0.02);
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + note.end);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now + note.start);
+                osc.stop(now + note.end + 0.02);
+            });
+            setTimeout(function () {
+                if (ctx.state !== 'closed') ctx.close().catch(function () { });
+            }, 600);
+        } catch (e) { }
+    }
+
+    function speakWelcomeFallback() {
+        if (!('speechSynthesis' in window)) return;
+        try {
+            window.speechSynthesis.cancel();
+            const utter = new SpeechSynthesisUtterance(WELCOME_MSG);
+            utter.lang = 'id-ID';
+            utter.rate = 0.98;
+            utter.pitch = 1.02;
+            const voices = window.speechSynthesis.getVoices();
+            const idVoice = voices.find(function (v) {
+                return v.lang && v.lang.toLowerCase().indexOf('id') === 0;
+            });
+            if (idVoice) utter.voice = idVoice;
+            window.speechSynthesis.speak(utter);
+        } catch (e) { }
+    }
+
+    function triggerWelcomeNotification() {
+        if (welcomePlayed) return;
+        welcomePlayed = true;
+
+        playNotifChime();
+
+        if (!welcomeAudio || welcomeAudioFailed) {
+            speakWelcomeFallback();
+        } else {
+            try {
+                welcomeAudio.currentTime = 0;
+                const playPromise = welcomeAudio.play();
+                if (playPromise && typeof playPromise.catch === 'function') {
+                    playPromise.catch(speakWelcomeFallback);
+                }
+            } catch (e) {
+                speakWelcomeFallback();
+            }
+        }
+
+        if (showToastFn) {
+            showToastFn(WELCOME_MSG, 5200);
+        }
+    }
 
     function initChoiceModal() {
         const modal = document.getElementById('choiceModal');
@@ -187,6 +271,7 @@
 
         function dismissOverlay() {
             if (overlay.classList.contains('intro-hidden')) return;
+            triggerWelcomeNotification();
             overlay.classList.add('intro-hidden');
             document.body.style.overflow = '';
             setTimeout(function () {
@@ -407,7 +492,7 @@
         container.className = 'toast-container';
         document.body.appendChild(container);
 
-        function showToast(msg) {
+        function showToast(msg, duration) {
             const t = document.createElement('div');
             t.className = 'toast';
             t.innerHTML = `<span class="toast-dot"></span><span>${msg}</span>`;
@@ -416,8 +501,10 @@
             setTimeout(function () {
                 t.classList.remove('show');
                 setTimeout(function () { t.remove(); }, 300);
-            }, 2500);
+            }, duration || 2500);
         }
+
+        showToastFn = showToast;
 
         document.querySelectorAll('.download-btn, a.pubg-card, a.pubg-dl-btn').forEach(function (btn) {
             btn.addEventListener('click', function () {
