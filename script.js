@@ -187,6 +187,346 @@
         }
     }
 
+    /* ---------- World Languages (Google Translate Full List) ---------- */
+    const WORLD_LANGUAGES = [
+        { code: 'id', flag: 'id', name: 'Bahasa Indonesia', native: 'Indonesia' },
+        { code: 'en', flag: 'gb', name: 'Inggris', native: 'English' },
+        { code: 'ms', flag: 'my', name: 'Melayu', native: 'Bahasa Melayu' },
+        { code: 'ar', flag: 'sa', name: 'Arab', native: 'العربية' },
+        { code: 'zh-CN', flag: 'cn', name: 'Mandarin (Sederhana)', native: '简体中文' },
+        { code: 'zh-TW', flag: 'tw', name: 'Mandarin (Tradisional)', native: '繁體中文' },
+        { code: 'ja', flag: 'jp', name: 'Jepang', native: '日本語' },
+        { code: 'ko', flag: 'kr', name: 'Korea', native: '한국어' },
+        { code: 'vi', flag: 'vn', name: 'Vietnam', native: 'Tiếng Việt' },
+        { code: 'th', flag: 'th', name: 'Thailand', native: 'ไทย' },
+        { code: 'tl', flag: 'ph', name: 'Tagalog / Filipino', native: 'Filipino' },
+        { code: 'jv', flag: 'id', name: 'Jawa', native: 'Basa Jawa' },
+        { code: 'su', flag: 'id', name: 'Sunda', native: 'Basa Sunda' },
+        { code: 'hi', flag: 'in', name: 'Hindi', native: 'हिन्दी' },
+        { code: 'bn', flag: 'bd', name: 'Bengali', native: 'বাংলা' },
+        { code: 'ur', flag: 'pk', name: 'Urdu', native: 'اردو' },
+        { code: 'fa', flag: 'ir', name: 'Persia', native: 'فارسی' },
+        { code: 'tr', flag: 'tr', name: 'Turki', native: 'Türkçe' },
+        { code: 'ru', flag: 'ru', name: 'Rusia', native: 'Русский' },
+        { code: 'es', flag: 'es', name: 'Spanyol', native: 'Español' },
+        { code: 'fr', flag: 'fr', name: 'Prancis', native: 'Français' },
+        { code: 'de', flag: 'de', name: 'Jerman', native: 'Deutsch' },
+        { code: 'pt', flag: 'pt', name: 'Portugis', native: 'Português' },
+        { code: 'it', flag: 'it', name: 'Italia', native: 'Italiano' },
+        { code: 'nl', flag: 'nl', name: 'Belanda', native: 'Nederlands' },
+        { code: 'pl', flag: 'pl', name: 'Polandia', native: 'Polski' },
+        { code: 'uk', flag: 'ua', name: 'Ukraina', native: 'Українська' },
+        { code: 'ro', flag: 'ro', name: 'Rumania', native: 'Română' },
+        { code: 'cs', flag: 'cz', name: 'Ceko', native: 'Čeština' },
+        { code: 'sv', flag: 'se', name: 'Swedia', native: 'Svenska' },
+        { code: 'da', flag: 'dk', name: 'Denmark', native: 'Dansk' },
+        { code: 'fi', flag: 'fi', name: 'Finlandia', native: 'Suomi' },
+        { code: 'no', flag: 'no', name: 'Norwegia', native: 'Norsk' },
+        { code: 'el', flag: 'gr', name: 'Yunani', native: 'Ελληνικά' },
+        { code: 'hu', flag: 'hu', name: 'Hungaria', native: 'Magyar' },
+        { code: 'he', flag: 'il', name: 'Ibrani', native: 'עברית' },
+        { code: 'af', flag: 'za', name: 'Afrikaans', native: 'Afrikaans' },
+        { code: 'sq', flag: 'al', name: 'Albania', native: 'Shqip' },
+        { code: 'am', flag: 'et', name: 'Amharik', native: 'አማርኛ' },
+        { code: 'hy', flag: 'am', name: 'Armenia', native: 'Հայերեն' },
+        { code: 'as', flag: 'in', name: 'Assam', native: 'অসমীয়া' },
+        { code: 'ay', flag: 'bo', name: 'Aymara', native: 'Aymar aru' },
+        { code: 'az', flag: 'az', name: 'Azerbaijan', native: 'Azərbaycan dili' },
+        { code: 'bm', flag: 'ml', name: 'Bambara', native: 'Bamanankan' },
+        { code: 'eu', flag: 'es-pv', name: 'Basque', native: 'Euskara' },
+        { code: 'be', flag: 'by', name: 'Belarusia', native: 'Беларуская' },
+        { code: 'bho', flag: 'in', name: 'Bhojpuri', native: 'भोजपुरी' },
+        { code: 'bs', flag: 'ba', name: 'Bosnia', native: 'Bosanski' },
+        { code: 'bg', flag: 'bg', name: 'Bulgaria', native: 'Български' },
+        { code: 'ca', flag: 'es-ct', name: 'Katalan', native: 'Català' },
+        { code: 'ceb', flag: 'ph', name: 'Cebuano', native: 'Binisaya' },
+        { code: 'ny', flag: 'mw', name: 'Chichewa', native: 'Chichewa' },
+        { code: 'co', flag: 'fr', name: 'Korsika', native: 'Corsu' },
+        { code: 'hr', flag: 'hr', name: 'Kroasia', native: 'Hrvatski' },
+        { code: 'dv', flag: 'mv', name: 'Dhivehi', native: 'ދިވެހި' },
+        { code: 'doi', flag: 'in', name: 'Dogri', native: 'डोगरी' },
+        { code: 'eo', flag: 'eo', name: 'Esperanto', native: 'Esperanto' },
+        { code: 'et', flag: 'ee', name: 'Estonia', native: 'Eesti' },
+        { code: 'ee', flag: 'tg', name: 'Ewe', native: 'Eʋegbe' },
+        { code: 'fy', flag: 'nl', name: 'Frisia', native: 'Frysk' },
+        { code: 'gl', flag: 'es-ga', name: 'Galisia', native: 'Galego' },
+        { code: 'ka', flag: 'ge', name: 'Georgia', native: 'ქართული' },
+        { code: 'gn', flag: 'py', name: 'Guarani', native: "Avañe'ẽ" },
+        { code: 'gu', flag: 'in', name: 'Gujarat', native: 'ગુજરાતી' },
+        { code: 'ht', flag: 'ht', name: 'Kreol Haiti', native: 'Kreyòl ayisyen' },
+        { code: 'ha', flag: 'ng', name: 'Hausa', native: 'Hausa' },
+        { code: 'haw', flag: 'us', name: 'Hawaii', native: 'ʻŌlelo Hawaiʻi' },
+        { code: 'hmn', flag: 'la', name: 'Hmong', native: 'Hmoob' },
+        { code: 'is', flag: 'is', name: 'Islandia', native: 'Íslenska' },
+        { code: 'ig', flag: 'ng', name: 'Igbo', native: 'Igbo' },
+        { code: 'ilo', flag: 'ph', name: 'Ilokano', native: 'Ilokano' },
+        { code: 'ga', flag: 'ie', name: 'Irlandia', native: 'Gaeilge' },
+        { code: 'kn', flag: 'in', name: 'Kannada', native: 'ಕನ್ನಡ' },
+        { code: 'kk', flag: 'kz', name: 'Kazakh', native: 'Қазақ тілі' },
+        { code: 'km', flag: 'kh', name: 'Khmer', native: 'ខ្មែរ' },
+        { code: 'rw', flag: 'rw', name: 'Kinyarwanda', native: 'Ikinyarwanda' },
+        { code: 'gom', flag: 'in', name: 'Konkani', native: 'कोंकणी' },
+        { code: 'kri', flag: 'sl', name: 'Krio', native: 'Krio' },
+        { code: 'ku', flag: 'iq', name: 'Kurdi (Kurmanji)', native: 'Kurdî' },
+        { code: 'ckb', flag: 'iq', name: 'Kurdi (Sorani)', native: 'کوردی' },
+        { code: 'ky', flag: 'kg', name: 'Kirgiz', native: 'Кыргызча' },
+        { code: 'lo', flag: 'la', name: 'Lao', native: 'ລາວ' },
+        { code: 'la', flag: 'va', name: 'Latin', native: 'Latina' },
+        { code: 'lv', flag: 'lv', name: 'Latvia', native: 'Latviešu' },
+        { code: 'ln', flag: 'cd', name: 'Lingala', native: 'Lingála' },
+        { code: 'lt', flag: 'lt', name: 'Lituania', native: 'Lietuvių' },
+        { code: 'lg', flag: 'ug', name: 'Luganda', native: 'Luganda' },
+        { code: 'lb', flag: 'lu', name: 'Luksemburg', native: 'Lëtzebuergesch' },
+        { code: 'mk', flag: 'mk', name: 'Makedonia', native: 'Македонски' },
+        { code: 'mai', flag: 'in', name: 'Maithili', native: 'मैथिली' },
+        { code: 'mg', flag: 'mg', name: 'Malagasi', native: 'Malagasy' },
+        { code: 'ml', flag: 'in', name: 'Malayalam', native: 'മലയാളം' },
+        { code: 'mt', flag: 'mt', name: 'Malta', native: 'Malti' },
+        { code: 'mi', flag: 'nz', name: 'Maori', native: 'Te Reo Māori' },
+        { code: 'mr', flag: 'in', name: 'Marathi', native: 'मराठी' },
+        { code: 'mni-Mtei', flag: 'in', name: 'Meiteilon (Manipuri)', native: 'ꯃꯩꯇꯩꯂꯣꯟ' },
+        { code: 'lus', flag: 'in', name: 'Mizo', native: 'Mizo ṭawng' },
+        { code: 'mn', flag: 'mn', name: 'Mongolia', native: 'Монгол' },
+        { code: 'my', flag: 'mm', name: 'Myanmar (Burma)', native: 'မြန်မာ' },
+        { code: 'ne', flag: 'np', name: 'Nepal', native: 'नेपाली' },
+        { code: 'nso', flag: 'za', name: 'Sepedi', native: 'Sepedi' },
+        { code: 'or', flag: 'in', name: 'Odia (Oriya)', native: 'ଓଡ଼ିଆ' },
+        { code: 'om', flag: 'et', name: 'Oromo', native: 'Afaan Oromoo' },
+        { code: 'ps', flag: 'af', name: 'Pashto', native: 'پښتو' },
+        { code: 'pa', flag: 'in', name: 'Punjabi', native: 'ਪੰਜਾਬੀ' },
+        { code: 'qu', flag: 'pe', name: 'Quechua', native: 'Runasimi' },
+        { code: 'sm', flag: 'ws', name: 'Samoa', native: 'Gagana Samoa' },
+        { code: 'sa', flag: 'in', name: 'Sanskerta', native: 'संस्कृतम्' },
+        { code: 'gd', flag: 'gb-sct', name: 'Gaelik Skotlandia', native: 'Gàidhlig' },
+        { code: 'sr', flag: 'rs', name: 'Serbia', native: 'Српски' },
+        { code: 'st', flag: 'ls', name: 'Sesotho', native: 'Sesotho' },
+        { code: 'sn', flag: 'zw', name: 'Shona', native: 'ChiShona' },
+        { code: 'sd', flag: 'pk', name: 'Sindhi', native: 'سنڌي' },
+        { code: 'si', flag: 'lk', name: 'Sinhala', native: 'සිංහල' },
+        { code: 'sk', flag: 'sk', name: 'Slovakia', native: 'Slovenčina' },
+        { code: 'sl', flag: 'si', name: 'Slovenia', native: 'Slovenščina' },
+        { code: 'so', flag: 'so', name: 'Somalia', native: 'Soomaali' },
+        { code: 'sw', flag: 'tz', name: 'Swahili', native: 'Kiswahili' },
+        { code: 'tg', flag: 'tj', name: 'Tajik', native: 'Тоҷикӣ' },
+        { code: 'ta', flag: 'in', name: 'Tamil', native: 'தமிழ்' },
+        { code: 'tt', flag: 'ru', name: 'Tatar', native: 'Татар' },
+        { code: 'te', flag: 'in', name: 'Telugu', native: 'తెలుగు' },
+        { code: 'ti', flag: 'er', name: 'Tigrinya', native: 'ትግርኛ' },
+        { code: 'ts', flag: 'za', name: 'Tsonga', native: 'Xitsonga' },
+        { code: 'tk', flag: 'tm', name: 'Turkmen', native: 'Türkmençe' },
+        { code: 'ak', flag: 'gh', name: 'Twi (Akan)', native: 'Akan' },
+        { code: 'ug', flag: 'cn', name: 'Uyghur', native: 'ئۇيغۇرچە' },
+        { code: 'uz', flag: 'uz', name: 'Uzbek', native: "Oʻzbekcha" },
+        { code: 'cy', flag: 'gb-wls', name: 'Wales', native: 'Cymraeg' },
+        { code: 'xh', flag: 'za', name: 'Xhosa', native: 'isiXhosa' },
+        { code: 'yi', flag: 'il', name: 'Yiddish', native: 'ייִדיש' },
+        { code: 'yo', flag: 'ng', name: 'Yoruba', native: 'Yorùbá' },
+        { code: 'zu', flag: 'za', name: 'Zulu', native: 'isiZulu' }
+    ];
+
+    let pendingTranslateCode = null;
+
+    window.googleTranslateElementInit = function () {
+        if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+            new window.google.translate.TranslateElement({
+                pageLanguage: 'id',
+                autoDisplay: false
+            }, 'google_translate_element');
+
+            if (pendingTranslateCode) {
+                triggerGoogleCombo(pendingTranslateCode);
+                pendingTranslateCode = null;
+            }
+        }
+    };
+
+    function setGoogTransCookie(code) {
+        if (code === 'id') {
+            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            if (window.location.hostname) {
+                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + window.location.hostname + ';';
+            }
+            return;
+        }
+        document.cookie = 'googtrans=/id/' + code + '; path=/;';
+    }
+
+    function triggerGoogleCombo(code, attempt) {
+        const tries = attempt || 0;
+        const combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+            combo.value = code;
+            combo.dispatchEvent(new Event('change'));
+            return true;
+        }
+        if (tries < 14) {
+            setTimeout(function () { triggerGoogleCombo(code, tries + 1); }, 250);
+        }
+        return false;
+    }
+
+    function getShortLangTag(code) {
+        return code.split('-')[0].toUpperCase();
+    }
+
+    function initLanguageModal() {
+        const modal = document.getElementById('langModal');
+        const backdrop = document.getElementById('langModalBackdrop');
+        const closeBtn = document.getElementById('langModalClose');
+        const openBtn = document.getElementById('openLangModalBtn');
+        const grid = document.getElementById('langGrid');
+        const searchInput = document.getElementById('langSearchInput');
+        const emptyMsg = document.getElementById('langEmpty');
+        const totalEl = document.getElementById('langTotalCount');
+        const activeCodeEl = document.getElementById('activeLangCode');
+        const activeFlagEl = document.getElementById('activeLangFlag');
+        if (!modal || !grid) return;
+
+        if (totalEl) totalEl.textContent = String(WORLD_LANGUAGES.length);
+
+        let savedLang = 'id';
+        try {
+            const stored = localStorage.getItem('preferred_lang');
+            if (stored && WORLD_LANGUAGES.some(function (l) { return l.code === stored; })) {
+                savedLang = stored;
+            }
+        } catch (e) { }
+
+        function updateActiveUI(code) {
+            const selectedLang = WORLD_LANGUAGES.find(function (l) { return l.code === code; });
+            if (activeCodeEl) activeCodeEl.textContent = getShortLangTag(code);
+            if (activeFlagEl) {
+                activeFlagEl.src = 'assets/flags/' + (selectedLang ? selectedLang.flag : 'id') + '.svg';
+            }
+            grid.querySelectorAll('.lang-item-btn').forEach(function (b) {
+                const isSelected = b.getAttribute('data-lang') === code;
+                b.classList.toggle('is-active', isSelected);
+                b.setAttribute('aria-selected', String(isSelected));
+            });
+        }
+
+        function applyLanguage(lang) {
+            try { localStorage.setItem('preferred_lang', lang.code); } catch (e) { }
+            updateActiveUI(lang.code);
+            setGoogTransCookie(lang.code);
+            closeModal();
+
+            if (lang.code === 'id') {
+                if (document.querySelector('.goog-te-combo')) {
+                    window.location.reload();
+                } else if (showToastFn) {
+                    showToastFn('Bahasa diubah ke Bahasa Indonesia.', 2600);
+                }
+                return;
+            }
+
+            pendingTranslateCode = lang.code;
+            const comboReady = triggerGoogleCombo(lang.code);
+            if (showToastFn) {
+                const msg = (window.location.protocol === 'file:' && !comboReady)
+                    ? 'Bahasa dipilih: ' + lang.native + ' (terjemahan penuh aktif saat dibuka via web/HTTPS).'
+                    : 'Menerjemahkan halaman ke ' + lang.native + '…';
+                showToastFn(msg, 3200);
+            }
+        }
+
+        let enLangNames = null;
+        let enRegionNames = null;
+        let idRegionNames = null;
+        try {
+            if (typeof Intl !== 'undefined' && typeof Intl.DisplayNames === 'function') {
+                enLangNames = new Intl.DisplayNames(['en'], { type: 'language' });
+                enRegionNames = new Intl.DisplayNames(['en'], { type: 'region' });
+                idRegionNames = new Intl.DisplayNames(['id'], { type: 'region' });
+            }
+        } catch (err) {
+            enLangNames = null;
+            enRegionNames = null;
+            idRegionNames = null;
+        }
+
+        const frag = document.createDocumentFragment();
+        WORLD_LANGUAGES.forEach(function (lang) {
+            let extraKeywords = '';
+            if (enLangNames) {
+                try {
+                    extraKeywords += ' ' + (enLangNames.of(lang.code) || '');
+                } catch (err) { }
+            }
+            const isoRegion = lang.flag.split('-')[0].toUpperCase();
+            if (isoRegion.length === 2 && lang.flag !== 'eo') {
+                try {
+                    if (enRegionNames) extraKeywords += ' ' + (enRegionNames.of(isoRegion) || '');
+                    if (idRegionNames) extraKeywords += ' ' + (idRegionNames.of(isoRegion) || '');
+                } catch (err) { }
+            }
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'lang-item-btn';
+            btn.setAttribute('role', 'option');
+            btn.setAttribute('data-lang', lang.code);
+            btn.setAttribute('data-search', (lang.name + ' ' + lang.native + extraKeywords + ' ' + lang.code).toLowerCase());
+            btn.innerHTML = `<img class="lang-item-flag" src="assets/flags/${lang.flag}.svg" alt="" width="28" height="21" loading="lazy" decoding="async" aria-hidden="true"><span class="lang-item-names"><strong>${lang.native}</strong><small>${lang.name}</small></span><span class="lang-item-code">${lang.code}</span>`;
+            btn.addEventListener('click', function () {
+                applyLanguage(lang);
+            });
+            frag.appendChild(btn);
+        });
+        grid.appendChild(frag);
+        updateActiveUI(savedLang);
+
+        if (savedLang !== 'id') {
+            setGoogTransCookie(savedLang);
+            pendingTranslateCode = savedLang;
+        }
+
+        function openModal() {
+            modal.removeAttribute('hidden');
+            document.body.style.overflow = 'hidden';
+            if (searchInput) {
+                searchInput.value = '';
+                filterLanguages('');
+                setTimeout(function () { searchInput.focus(); }, 60);
+            }
+        }
+
+        function closeModal() {
+            modal.setAttribute('hidden', '');
+            document.body.style.overflow = '';
+        }
+
+        function filterLanguages(query) {
+            const q = query.trim().toLowerCase();
+            let visible = 0;
+            grid.querySelectorAll('.lang-item-btn').forEach(function (btn) {
+                const hay = btn.getAttribute('data-search') || '';
+                const match = !q || hay.indexOf(q) !== -1;
+                btn.hidden = !match;
+                if (match) visible++;
+            });
+            if (emptyMsg) emptyMsg.hidden = visible > 0;
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', function () {
+                filterLanguages(searchInput.value);
+            });
+        }
+        if (openBtn) openBtn.addEventListener('click', openModal);
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (backdrop) backdrop.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !modal.hasAttribute('hidden')) {
+                closeModal();
+            }
+        });
+    }
+
     function initChoiceModal() {
         const modal = document.getElementById('choiceModal');
         if (!modal) return;
@@ -196,7 +536,6 @@
         const backBtn = document.getElementById('choiceBack');
         const closeBtn = document.getElementById('choiceModalClose');
         const backdrop = document.getElementById('choiceBackdrop');
-        const openBtn = document.getElementById('openChoiceModalBtn');
 
         function openModal() {
             if (stepRoot) stepRoot.hidden = false;
@@ -250,7 +589,6 @@
 
         if (closeBtn) closeBtn.addEventListener('click', closeModal);
         if (backdrop) backdrop.addEventListener('click', closeModal);
-        if (openBtn) openBtn.addEventListener('click', openModal);
 
         modal.addEventListener('click', function (e) {
             if (e.target === modal) closeModal();
@@ -677,6 +1015,7 @@
         initVideoLoaders();
         initDynamicSnow();
         initChoiceModal();
+        initLanguageModal();
         initIntroOverlay();
         initTutorialSwitchers();
         initLightbox();

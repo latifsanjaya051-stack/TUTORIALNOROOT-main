@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css?v=12">
 </head>
 
 <body>
@@ -269,12 +269,52 @@
         </div>
     </div>
 
+    <!-- Language Selector Modal (All World Languages) -->
+    <div class="choice-modal notranslate" id="langModal" role="dialog" aria-modal="true"
+        aria-labelledby="langModalTitle" translate="no" hidden>
+        <div class="choice-modal-backdrop" id="langModalBackdrop"></div>
+        <div class="choice-card lang-modal-card" tabindex="-1">
+            <div class="choice-card-glow-bar"></div>
+            <button type="button" class="choice-modal-close" id="langModalClose" aria-label="Tutup pilihan bahasa">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="choice-step-header lang-modal-header">
+                <div class="step-badge">
+                    <span class="step-badge-dot"></span>
+                    <span>BAHASA DUNIA (<span id="langTotalCount">133</span>)</span>
+                </div>
+                <h2 class="choice-title" id="langModalTitle">PILIHAN BAHASA</h2>
+                <p class="choice-sub">Terjemahkan seluruh halaman secara otomatis ke bahasa pilihan Anda.</p>
+            </div>
+
+            <div class="lang-search-wrap">
+                <svg class="lang-search-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"
+                    stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="search" id="langSearchInput" class="lang-search-input"
+                    placeholder="Cari bahasa (Indonesia, English, العربية, 日本語, 한국어...)" autocomplete="off"
+                    aria-label="Cari bahasa">
+            </div>
+
+            <div class="lang-grid" id="langGrid" role="listbox" aria-label="Daftar bahasa dunia"></div>
+            <p class="lang-empty" id="langEmpty" hidden>Bahasa tidak ditemukan. Coba kata kunci lain.</p>
+        </div>
+    </div>
+
     <!-- Navigation Header -->
     <header id="mainHeader">
         <div class="container nav-container">
             <a href="#" class="logo" aria-label="Tutorial Root & No Root">
                 <img src="assets/logo.svg" alt="" class="logo-mark" width="36" height="36" aria-hidden="true">
-                <span class="logo-text">TUTORIAL<span class="logo-accent">VIP</span></span>
+                <span class="logo-text notranslate" translate="no">TUTORIAL<span class="logo-accent">VIP</span></span>
             </a>
             <button id="navToggle" class="nav-toggle" type="button" aria-label="Buka menu navigasi"
                 aria-expanded="false" aria-controls="primaryNav">
@@ -283,15 +323,23 @@
                 <span class="nav-toggle-bar"></span>
             </button>
             <nav id="primaryNav" class="primary-nav">
-                <button type="button" id="openChoiceModalBtn" class="open-choice-btn"
-                    aria-label="Buka Pemilihan Metode">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                        <polyline points="2 17 12 22 22 17"></polyline>
-                        <polyline points="2 12 12 17 22 12"></polyline>
+                <button type="button" id="openLangModalBtn" class="open-choice-btn"
+                    aria-label="Buka Pilihan Bahasa">
+                    <svg class="lang-globe-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
                     </svg>
-                    <span>PILIH METODE</span>
+                    <span>PILIHAN BAHASA</span>
+                    <span class="lang-active-chip notranslate" translate="no">
+                        <img id="activeLangFlag" src="assets/flags/id.svg" alt="" class="lang-flag-chip" width="16"
+                            height="12" aria-hidden="true">
+                        <span id="activeLangCode">ID</span>
+                    </span>
                 </button>
             </nav>
         </div>
@@ -1108,7 +1156,9 @@
         </section>
     </main>
 
-    <script src="script.js?v=4"></script>
+    <div id="google_translate_element" aria-hidden="true"></div>
+    <script src="script.js?v=6"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 
 </html>
