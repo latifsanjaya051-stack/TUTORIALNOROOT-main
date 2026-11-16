@@ -36,6 +36,7 @@
 
         createVideoEmbed('videoPreview', 'https://youtu.be/nFo4WVc9ZX4?si=lo-ekDOfVK6zr8ZT');
         createVideoEmbed('videoPreview2', 'https://youtu.be/XmzBGlpB5Eg?si=SEooZMPBqBpqjsly');
+        createVideoEmbed('videoPreviewLogin', 'https://youtu.be/tTNvWIvHrzQ?si=TwCB0ux2y74s7kYX');
     }
 
     /* ---------- 2. Subtle Ambient Particles ---------- */
