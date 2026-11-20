@@ -563,10 +563,10 @@
                     closeModal();
                     setTimeout(function () { scrollToSection('root-tutorial'); }, 120);
                 } else if (choice === 'noroot') {
-                    // Blackbox disembunyikan sementara: langsung arahkan ke Game Assistant
+                    // Blackbox disembunyikan sementara: tampilkan Game Assistant dan mulai dari atas halaman
                     showTutorialSection('gameassistant-tutorial');
                     closeModal();
-                    setTimeout(function () { scrollToSection('gameassistant-tutorial'); }, 120);
+                    window.scrollTo({ top: 0, behavior: 'auto' });
                 }
             });
         });
@@ -689,10 +689,17 @@
         }
 
         document.querySelectorAll('[data-lightbox]').forEach(function (wrap) {
-            wrap.addEventListener('click', function () {
+            function triggerOpen() {
                 const img = wrap.querySelector('img');
                 if (img && img.src) {
                     openLightbox(img.src, img.alt);
+                }
+            }
+            wrap.addEventListener('click', triggerOpen);
+            wrap.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    triggerOpen();
                 }
             });
         });
@@ -716,8 +723,7 @@
             ['.download-links', 'reveal'],
             ['.pubg-downloads', 'reveal'],
             ['.stat', 'reveal'],
-            ['.root-card', 'reveal'],
-            ['.hero-visual', 'reveal-right']
+            ['.root-card', 'reveal']
         ];
 
         const targets = [];
@@ -991,24 +997,6 @@
         update();
     }
 
-    /* ---------- 14. Pengguna Online ---------- */
-    function initOnlineUsers() {
-        const el = document.getElementById('onlineCount');
-        if (!el) return;
-
-        let count = 145 + Math.floor(Math.random() * 50);
-        function render() {
-            el.textContent = count.toLocaleString('id-ID');
-        }
-        render();
-
-        setInterval(function () {
-            const delta = Math.floor(Math.random() * 7) - 3;
-            count = Math.min(350, Math.max(90, count + delta));
-            render();
-        }, 4000);
-    }
-
     /* ---------- Init Everything ---------- */
     document.addEventListener('DOMContentLoaded', function () {
         hideTutorialSections();
@@ -1027,6 +1015,5 @@
         initCounters();
         initMobileNav();
         initScrollProgress();
-        initOnlineUsers();
     });
 })();

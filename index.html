@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=12">
+    <link rel="stylesheet" href="style.css?v=15">
 </head>
 
 <body>
@@ -309,6 +309,22 @@
         </div>
     </div>
 
+    <!-- Image Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Pratinjau gambar" hidden>
+        <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+        <div class="lightbox-content">
+            <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Tutup pratinjau gambar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <img src="" alt="" id="lightboxImg" class="lightbox-img">
+            <p id="lightboxCaption" class="lightbox-caption"></p>
+        </div>
+    </div>
+
     <!-- Navigation Header -->
     <header id="mainHeader">
         <div class="container nav-container">
@@ -465,42 +481,187 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <aside class="hero-visual" aria-hidden="true">
-                    <div class="glass-panel">
-                        <div class="glass-panel-head">
-                            <span class="status-dot"></span>
-                            <span class="glass-panel-title">STATUS SISTEM</span>
-                            <span class="glass-panel-badge">LIVE</span>
-                        </div>
-                        <div class="glass-row glass-row-blackbox">
-                            <span class="glass-row-label">BLACKBOX CONTAINER</span>
-                            <span class="glass-row-val hl-ok">AKTIF</span>
-                        </div>
-                        <div class="glass-row">
-                            <span class="glass-row-label">GAME ASSISTANT</span>
-                            <span class="glass-row-val hl-ok">AKTIF</span>
-                        </div>
-                        <div class="glass-row">
-                            <span class="glass-row-label">ROOT MODULE</span>
-                            <span class="glass-row-val hl-warn">VIA OWNER</span>
-                        </div>
-                        <div class="glass-row">
-                            <span class="glass-row-label">PENGGUNA ONLINE</span>
-                            <span class="glass-row-val hl-ok" id="onlineCount">—</span>
-                        </div>
-                        <div class="glass-meter">
-                            <div class="glass-meter-head"><span>STABILITAS SISTEM</span><span>90%</span></div>
-                            <div class="glass-meter-track">
-                                <div class="glass-meter-fill"></div>
-                            </div>
-                        </div>
-                        <div class="glass-chips">
-                            <span class="glass-chip">NO ROOT</span>
-                            <span class="glass-chip">ROOT</span>
-                        </div>
+        <!-- Persiapan Wajib Sebelum Pemasangan: Setelan Google Play Store -->
+        <section id="playstore-prep" class="prep-section" aria-labelledby="prepSectionTitle">
+            <div class="container">
+                <div class="prep-card">
+                    <div class="prep-accent-bar" aria-hidden="true"></div>
+                    <div class="prep-header">
+                        <span class="prep-badge">
+                            <span class="prep-badge-dot" aria-hidden="true"></span>
+                            PERSIAPAN WAJIB SEBELUM PEMASANGAN
+                        </span>
+                        <h2 class="prep-title" id="prepSectionTitle">ATUR PLAY STORE SEBELUM LANJUT KE PEMASANGAN</h2>
+                        <p class="prep-subtitle">Ikuti urutan <strong>5 langkah</strong> berikut agar aplikasi dan game
+                            tidak ter-update otomatis oleh Google Play Store. Ketuk gambar mana saja untuk memperbesar.</p>
                     </div>
-                </aside>
+
+                    <div class="prep-steps-grid">
+                        <!-- Langkah 1 -->
+                        <article class="prep-step-card">
+                            <div class="prep-step-img-wrap" data-lightbox role="button" tabindex="0"
+                                aria-label="Perbesar gambar Langkah 1: Buka aplikasi Google Play Store">
+                                <span class="prep-step-num-badge">01</span>
+                                <img src="assets/playstore-step-1.jpg"
+                                    alt="Langkah 1: Buka aplikasi Google Play Store di perangkat Anda"
+                                    class="prep-step-img" width="1024" height="705" loading="lazy" decoding="async">
+                                <span class="prep-zoom-hint" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                                    </svg>
+                                    Perbesar
+                                </span>
+                            </div>
+                            <div class="prep-step-body">
+                                <span class="prep-step-pill">LANGKAH 1</span>
+                                <h3 class="prep-step-title">Buka Google Play Store</h3>
+                                <p class="prep-step-desc">Buka aplikasi <strong>Play Store</strong> di menu utama HP atau
+                                    tablet Anda seperti yang ditunjukkan tanda panah.</p>
+                            </div>
+                        </article>
+
+                        <!-- Langkah 2 -->
+                        <article class="prep-step-card">
+                            <div class="prep-step-img-wrap" data-lightbox role="button" tabindex="0"
+                                aria-label="Perbesar gambar Langkah 2: Ketuk ikon profil akun di pojok kanan atas">
+                                <span class="prep-step-num-badge">02</span>
+                                <img src="assets/playstore-step-2.jpg"
+                                    alt="Langkah 2: Ketuk ikon profil akun Google di pojok kanan atas Play Store"
+                                    class="prep-step-img" width="1024" height="640" loading="lazy" decoding="async">
+                                <span class="prep-zoom-hint" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                                    </svg>
+                                    Perbesar
+                                </span>
+                            </div>
+                            <div class="prep-step-body">
+                                <span class="prep-step-pill">LANGKAH 2</span>
+                                <h3 class="prep-step-title">Ketuk Ikon Profil Akun</h3>
+                                <p class="prep-step-desc">Setelah Play Store terbuka, klik <strong>ikon foto / huruf
+                                        profil akun</strong> di pojok kanan atas layar.</p>
+                            </div>
+                        </article>
+
+                        <!-- Langkah 3 -->
+                        <article class="prep-step-card">
+                            <div class="prep-step-img-wrap" data-lightbox role="button" tabindex="0"
+                                aria-label="Perbesar gambar Langkah 3: Pilih menu Setelan">
+                                <span class="prep-step-num-badge">03</span>
+                                <img src="assets/playstore-step-3.jpg"
+                                    alt="Langkah 3: Pilih menu Setelan pada daftar menu profil Play Store"
+                                    class="prep-step-img" width="1024" height="640" loading="lazy" decoding="async">
+                                <span class="prep-zoom-hint" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                                    </svg>
+                                    Perbesar
+                                </span>
+                            </div>
+                            <div class="prep-step-body">
+                                <span class="prep-step-pill">LANGKAH 3</span>
+                                <h3 class="prep-step-title">Masuk ke Menu Setelan</h3>
+                                <p class="prep-step-desc">Pada jendela menu akun yang muncul, pilih bagian
+                                    <strong>Setelan</strong> (ikon gerigi) di bagian bawah daftar.</p>
+                            </div>
+                        </article>
+
+                        <!-- Langkah 4 -->
+                        <article class="prep-step-card prep-step-wide">
+                            <div class="prep-step-img-wrap" data-lightbox role="button" tabindex="0"
+                                aria-label="Perbesar gambar Langkah 4: Ketuk Preferensi jaringan">
+                                <span class="prep-step-num-badge">04</span>
+                                <img src="assets/playstore-step-4.jpg"
+                                    alt="Langkah 4: Pilih menu Preferensi jaringan di dalam Setelan Play Store"
+                                    class="prep-step-img" width="1024" height="640" loading="lazy" decoding="async">
+                                <span class="prep-zoom-hint" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                                    </svg>
+                                    Perbesar
+                                </span>
+                            </div>
+                            <div class="prep-step-body">
+                                <span class="prep-step-pill">LANGKAH 4</span>
+                                <h3 class="prep-step-title">Buka Preferensi Jaringan</h3>
+                                <p class="prep-step-desc">Di halaman Setelan, ketuk <strong>Preferensi jaringan</strong>
+                                    (Penggunaan data untuk download, update otomatis) untuk membuka opsinya.</p>
+                            </div>
+                        </article>
+
+                        <!-- Langkah 5 -->
+                        <article class="prep-step-card prep-step-wide prep-step-highlight">
+                            <div class="prep-step-img-wrap" data-lightbox role="button" tabindex="0"
+                                aria-label="Perbesar gambar Langkah 5: Samakan Preferensi download dan Update otomatis aplikasi">
+                                <span class="prep-step-num-badge prep-num-accent">05</span>
+                                <img src="assets/playstore-step-5.jpg"
+                                    alt="Langkah 5: Samakan Preferensi download aplikasi ke Selalu tanyakan dan Update otomatis aplikasi ke Jangan update otomatis aplikasi"
+                                    class="prep-step-img" width="1024" height="640" loading="lazy" decoding="async">
+                                <span class="prep-zoom-hint" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                                    </svg>
+                                    Perbesar
+                                </span>
+                            </div>
+                            <div class="prep-step-body">
+                                <span class="prep-step-pill prep-pill-accent">LANGKAH 5 • SAMAKAN</span>
+                                <h3 class="prep-step-title">Samakan Kedua Pengaturan Ini</h3>
+                                <p class="prep-step-desc">Pastikan dua opsi di dalam lingkaran pada gambar disamakan
+                                    sebagai berikut:</p>
+                                <ul class="prep-check-summary">
+                                    <li>
+                                        <span class="prep-check-label">Preferensi download aplikasi</span>
+                                        <span class="prep-check-val">Selalu tanyakan</span>
+                                    </li>
+                                    <li>
+                                        <span class="prep-check-label">Update otomatis aplikasi</span>
+                                        <span class="prep-check-val">Jangan update otomatis aplikasi</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="prep-footer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Setelah 5 langkah di atas selesai disamakan, silakan lanjutkan ke <strong>video tutorial
+                                pemasangan</strong> di bawah ini.</span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -671,24 +832,59 @@
 
                     <!-- Pilihan Unduhan 5 Versi PUBG (No Root) -->
                     <div id="pubgNoRootSection" class="pubg-downloads" aria-label="Unduhan PUBG No Root">
-                        <div class="feature-card info-card pubg-notice-card spotlight-card">
-                            <div class="info-badge pubg-notice-badge">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                    stroke-linejoin="round" aria-hidden="true">
-                                    <path
-                                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
-                                    </path>
-                                    <line x1="12" y1="9" x2="12" y2="13"></line>
-                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                                </svg>
+                        <div class="feature-card info-card pubg-notice-card spotlight-card" role="alert">
+                            <div class="pubg-notice-accent-bar" aria-hidden="true"></div>
+                            <div class="pubg-notice-head">
+                                <div class="info-badge pubg-notice-badge">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true">
+                                        <path
+                                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                                        </path>
+                                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </div>
+                                <h3 class="elegant-title pubg-notice-title">INFORMASI PENTING &amp; WAJIB DIBACA</h3>
+                                <p class="pubg-notice-lead">Ikuti <strong>4 urutan wajib</strong> berikut sebelum memasang
+                                    Game Assistant &amp; Loader agar tidak terjadi error:</p>
                             </div>
-                            <h3 class="elegant-title pubg-notice-title">INFORMASI PENTING &amp; WAJIB DI BACA</h3>
-                            <p class="pubg-notice-text"><span class="hl-warn">WAJIB UNDUH PUBG DARI SINI</span>, HAPUS
-                                PUBG ORIGINAL PLAYSTORE MU, SETELAH INSTALL PUBG DI BAWAH INI, <span class="hl">PASANG
-                                    DULU PUBG
-                                    NYA</span>, BARU TAHAP PEMASANGAN <span class="hl-warn">GAMEASSISTENT &amp;
-                                    LOADER</span></p>
+
+                            <ol class="pubg-notice-steps">
+                                <li class="pubg-notice-step">
+                                    <span class="pubg-step-num" aria-hidden="true">1</span>
+                                    <div class="pubg-step-content">
+                                        <strong class="pubg-step-title">Hapus PUBG Original Play Store</strong>
+                                        <p class="pubg-step-desc">Uninstall / hapus dulu aplikasi <strong>PUBG Mobile
+                                                bawaan Play Store</strong> yang terpasang di HP Anda.</p>
+                                    </div>
+                                </li>
+                                <li class="pubg-notice-step">
+                                    <span class="pubg-step-num" aria-hidden="true">2</span>
+                                    <div class="pubg-step-content">
+                                        <strong class="pubg-step-title">Wajib Unduh PUBG Dari Sini</strong>
+                                        <p class="pubg-step-desc">Unduh versi PUBG pilihan Anda dari <strong>daftar
+                                                unduhan di bawah ini</strong> (jangan unduh ulang dari Play Store).</p>
+                                    </div>
+                                </li>
+                                <li class="pubg-notice-step">
+                                    <span class="pubg-step-num" aria-hidden="true">3</span>
+                                    <div class="pubg-step-content">
+                                        <strong class="pubg-step-title">Pasang PUBG Terlebih Dahulu</strong>
+                                        <p class="pubg-step-desc">Install file PUBG yang baru diunduh sampai selesai
+                                            (untuk <strong>PUBG Korea</strong>, pasang juga file <strong>OBB</strong>-nya).</p>
+                                    </div>
+                                </li>
+                                <li class="pubg-notice-step">
+                                    <span class="pubg-step-num" aria-hidden="true">4</span>
+                                    <div class="pubg-step-content">
+                                        <strong class="pubg-step-title">Baru Pasang Game Assistant &amp; Loader</strong>
+                                        <p class="pubg-step-desc">Setelah PUBG selesai terpasang, barulah lanjut ke
+                                            tahap pemasangan <strong>Game Assistant 4.7 &amp; Loader Solana</strong>.</p>
+                                    </div>
+                                </li>
+                            </ol>
                         </div>
                         <div class="pubg-grid">
                             <!-- 1. PUBG MOBILE — Paste link MediaFire Anda pada atribut href di bawah -->
@@ -1157,7 +1353,7 @@
     </main>
 
     <div id="google_translate_element" aria-hidden="true"></div>
-    <script src="script.js?v=6"></script>
+    <script src="script.js?v=9"></script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 
