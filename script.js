@@ -65,6 +65,16 @@
                 el.setAttribute('aria-hidden', 'true');
             }
         });
+        const pubgSec = document.getElementById('pubgNoRootSection');
+        const prepSec = document.getElementById('playstore-prep');
+        if (pubgSec) {
+            pubgSec.style.display = 'none';
+            pubgSec.setAttribute('aria-hidden', 'true');
+        }
+        if (prepSec) {
+            prepSec.style.display = 'none';
+            prepSec.setAttribute('aria-hidden', 'true');
+        }
     }
 
     function showTutorialSection(id) {
@@ -76,14 +86,33 @@
             }
         });
 
+        const isNoRoot = (id === 'gameassistant-tutorial' || id === 'blackbox-tutorial');
+        const pubgSec = document.getElementById('pubgNoRootSection');
+        const prepSec = document.getElementById('playstore-prep');
+        if (pubgSec) {
+            pubgSec.style.display = isNoRoot ? '' : 'none';
+            if (!isNoRoot) pubgSec.setAttribute('aria-hidden', 'true');
+            else pubgSec.removeAttribute('aria-hidden');
+        }
+        if (prepSec) {
+            prepSec.style.display = isNoRoot ? '' : 'none';
+            if (!isNoRoot) prepSec.setAttribute('aria-hidden', 'true');
+            else prepSec.removeAttribute('aria-hidden');
+        }
+
         const target = document.getElementById(id);
         if (target) {
             target.style.display = '';
             target.removeAttribute('aria-hidden');
             // Ensure cards inside newly shown section animate in smoothly
             requestAnimationFrame(function () {
-                target.querySelectorAll('.reveal, .reveal-scale, .reveal-right').forEach(function (item) {
-                    item.classList.add('revealed');
+                const list = [target];
+                if (isNoRoot && pubgSec) list.push(pubgSec);
+                if (isNoRoot && prepSec) list.push(prepSec);
+                list.forEach(function (sec) {
+                    sec.querySelectorAll('.reveal, .reveal-scale, .reveal-right').forEach(function (item) {
+                        item.classList.add('revealed');
+                    });
                 });
             });
         }
@@ -888,6 +917,8 @@
                 const sectionId = targetId.substring(1);
                 if (TUTORIAL_IDS.indexOf(sectionId) !== -1) {
                     showTutorialSection(sectionId);
+                } else if (sectionId === 'pubgNoRootSection' || sectionId === 'playstore-prep') {
+                    showTutorialSection('gameassistant-tutorial');
                 }
                 const target = document.querySelector(targetId);
                 if (target) {

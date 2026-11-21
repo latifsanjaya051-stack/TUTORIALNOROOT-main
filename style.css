@@ -622,8 +622,10 @@ header.nav-hidden {
 }
 
 .intro-tagline {
-    font-size: 0.86rem;
-    color: var(--text-mute);
+    font-size: clamp(0.92rem, 2.5vw, 1.02rem);
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: 0.02em;
     margin-bottom: 1.75rem;
     line-height: 1.55;
 }
@@ -2100,10 +2102,25 @@ header.nav-hidden {
 }
 
 /* ---------- Versi PUBG Downloads (No Root) ---------- */
+.pubg-section {
+    padding: 0.4rem 0 2rem;
+}
+
+.pubg-downloads-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 2rem 2rem 1.75rem;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(16px);
+}
+
 .pubg-downloads {
     width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .feature-card.info-card.pubg-notice-card {
@@ -3827,6 +3844,7 @@ body {
 }
 
 @media (max-width: 900px) {
+    .pubg-downloads-card,
     .prep-card {
         padding: 1.55rem 1.25rem 1.4rem;
     }
@@ -3847,10 +3865,12 @@ body {
 }
 
 @media (max-width: 560px) {
+    .pubg-section,
     .prep-section {
         padding: 0.2rem 0 1.8rem;
     }
 
+    .pubg-downloads-card,
     .prep-card {
         padding: 1.35rem 0.95rem 1.2rem;
     }

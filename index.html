@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=15">
+    <link rel="stylesheet" href="style.css?v=18">
 </head>
 
 <body>
@@ -45,7 +45,7 @@
                 <img src="assets/logo.svg" alt="Logo Tutorial VIP" class="intro-logo-mark" width="36" height="36">
             </div>
             <div class="intro-logo">TUTORIAL <span>ROOT &amp; NO ROOT VIP</span></div>
-            <div class="intro-tagline">MINIMAL MEMBACA, MEMAHAMI, DAN MELIHAT DENGAN BENAR…</div>
+            <div class="intro-tagline">MINIMAL BISA MEMBACA, MEMAHAMI, DAN MELIHAT DENGAN BENAR…</div>
             <button type="button" class="intro-enter-btn" id="introEnterBtn" aria-label="Masuk ke website">
                 <span>MASUK KE TUTORIAL</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -78,12 +78,47 @@
                         <span class="step-badge-dot"></span>
                         <span>PILIH TIPE PERANGKAT</span>
                     </div>
-                    <h2 class="choice-title" id="choiceTitle">PERANGKAT ANDA ROOT ATAU NO ROOT?</h2>
+                    <h2 class="choice-title" id="choiceTitle">PERANGKAT ANDA NO ROOT ATAU ROOT?</h2>
                     <p class="choice-sub">Pilih jenis akses perangkat Anda untuk menampilkan panduan &amp; bahan yang
                         tepat.</p>
                 </div>
 
                 <div class="choice-options-grid">
+                    <button type="button" class="choice-card-opt choice-opt-noroot" data-choice="noroot">
+                        <div class="choice-opt-header">
+                            <div class="choice-opt-icon-wrapper noroot-icon-bg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                                </svg>
+                            </div>
+                            <div class="choice-opt-pills-col">
+                                <span class="choice-opt-badge-tag noroot-tag">POPULER &amp; AMAN</span>
+                                <span class="choice-opt-pill noroot-pill">GAME ASSISTANT</span>
+                            </div>
+                        </div>
+                        <div class="choice-opt-body">
+                            <h3 class="choice-opt-title">PERANGKAT NO ROOT</h3>
+                            <p class="choice-opt-desc">Panduan untuk HP standar tanpa ulik system. Metode Game Assistant
+                                4.7.</p>
+                            <div class="choice-opt-features">
+                                <span class="feat-tag">🚀 Easy Setup</span>
+                                <span class="feat-tag">🔒 100% Safe</span>
+                            </div>
+                        </div>
+                        <div class="choice-opt-footer">
+                            <span class="choice-opt-link">Buka Panduan No Root</span>
+                            <svg class="choice-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </div>
+                    </button>
+
                     <button type="button" class="choice-card-opt choice-opt-root" data-choice="root">
                         <div class="choice-opt-header">
                             <div class="choice-opt-icon-wrapper root-icon-bg">
@@ -114,41 +149,6 @@
                         </div>
                         <div class="choice-opt-footer">
                             <span class="choice-opt-link">Buka Panduan Root</span>
-                            <svg class="choice-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </div>
-                    </button>
-
-                    <button type="button" class="choice-card-opt choice-opt-noroot" data-choice="noroot">
-                        <div class="choice-opt-header">
-                            <div class="choice-opt-icon-wrapper noroot-icon-bg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
-                                    stroke-linejoin="round" aria-hidden="true">
-                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                                </svg>
-                            </div>
-                            <div class="choice-opt-pills-col">
-                                <span class="choice-opt-badge-tag noroot-tag">POPULER &amp; AMAN</span>
-                                <span class="choice-opt-pill noroot-pill">GAME ASSISTANT</span>
-                            </div>
-                        </div>
-                        <div class="choice-opt-body">
-                            <h3 class="choice-opt-title">PERANGKAT NO ROOT</h3>
-                            <p class="choice-opt-desc">Panduan untuk HP standar tanpa ulik system. Metode Game Assistant
-                                4.7.</p>
-                            <div class="choice-opt-features">
-                                <span class="feat-tag">🚀 Easy Setup</span>
-                                <span class="feat-tag">🔒 100% Safe</span>
-                            </div>
-                        </div>
-                        <div class="choice-opt-footer">
-                            <span class="choice-opt-link">Buka Panduan No Root</span>
                             <svg class="choice-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -339,11 +339,10 @@
                 <span class="nav-toggle-bar"></span>
             </button>
             <nav id="primaryNav" class="primary-nav">
-                <button type="button" id="openLangModalBtn" class="open-choice-btn"
-                    aria-label="Buka Pilihan Bahasa">
+                <button type="button" id="openLangModalBtn" class="open-choice-btn" aria-label="Buka Pilihan Bahasa">
                     <svg class="lang-globe-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="2" y1="12" x2="22" y2="12"></line>
                         <path
@@ -484,6 +483,188 @@
             </div>
         </section>
 
+        <!-- Pilihan Unduhan 5 Versi PUBG (No Root) -->
+        <section id="pubgNoRootSection" class="pubg-section" aria-label="Unduhan PUBG No Root">
+            <div class="container">
+                <div class="pubg-downloads-card pubg-downloads">
+                    <div class="feature-card info-card pubg-notice-card spotlight-card" role="alert">
+                        <div class="pubg-notice-accent-bar" aria-hidden="true"></div>
+                        <div class="pubg-notice-head">
+                            <div class="info-badge pubg-notice-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                                    </path>
+                                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </div>
+                            <h3 class="elegant-title pubg-notice-title">INFORMASI PENTING &amp; WAJIB DIBACA</h3>
+                            <p class="pubg-notice-lead">Ikuti <strong>4 urutan wajib</strong> berikut sebelum memasang
+                                Game Assistant &amp; Loader agar tidak terjadi error:</p>
+                        </div>
+
+                        <ol class="pubg-notice-steps">
+                            <li class="pubg-notice-step">
+                                <span class="pubg-step-num" aria-hidden="true">1</span>
+                                <div class="pubg-step-content">
+                                    <strong class="pubg-step-title">Hapus PUBG Original Play Store</strong>
+                                    <p class="pubg-step-desc">Uninstall / hapus dulu aplikasi <strong>PUBG Mobile
+                                            bawaan Play Store</strong> yang terpasang di HP Anda.</p>
+                                </div>
+                            </li>
+                            <li class="pubg-notice-step">
+                                <span class="pubg-step-num" aria-hidden="true">2</span>
+                                <div class="pubg-step-content">
+                                    <strong class="pubg-step-title">Wajib Unduh PUBG Dari Sini</strong>
+                                    <p class="pubg-step-desc">Unduh versi PUBG pilihan Anda dari <strong>daftar
+                                            unduhan di bawah ini</strong> (jangan unduh ulang dari Play Store).</p>
+                                </div>
+                            </li>
+                            <li class="pubg-notice-step">
+                                <span class="pubg-step-num" aria-hidden="true">3</span>
+                                <div class="pubg-step-content">
+                                    <strong class="pubg-step-title">Pasang PUBG Terlebih Dahulu</strong>
+                                    <p class="pubg-step-desc">Install file PUBG yang baru diunduh sampai selesai
+                                        (untuk <strong>PUBG Korea</strong>, pasang juga file <strong>OBB</strong>-nya).
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="pubg-notice-step">
+                                <span class="pubg-step-num" aria-hidden="true">4</span>
+                                <div class="pubg-step-content">
+                                    <strong class="pubg-step-title">Baru Pasang Game Assistant &amp; Loader</strong>
+                                    <p class="pubg-step-desc">Setelah PUBG selesai terpasang, barulah lanjut ke
+                                        tahap pemasangan <strong>Game Assistant 4.7 &amp; Loader Solana</strong>.</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="pubg-grid">
+                        <!-- 1. PUBG MOBILE — Paste link MediaFire Anda pada atribut href di bawah -->
+                        <a href="https://www.mediafire.com/file/rbzpyuu0dhp1b20/PUBG_MOBILE_GLOBAL_4.7.0.apk/file?action=check"
+                            target="_blank" rel="noopener noreferrer" class="pubg-card spotlight-card"
+                            aria-label="Unduh PUBG Mobile">
+                            <div class="pubg-thumb-wrap">
+                                <img src="assets/pubg-mobile.png" alt="PUBG Mobile" class="pubg-thumb" loading="lazy">
+                            </div>
+                            <span class="pubg-name">PUBG MOBILE</span>
+                            <span class="pubg-dl-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                <span>UNDUH</span>
+                            </span>
+                        </a>
+
+                        <!-- 2. PUBG MOBILE FLASH — Paste link MediaFire Anda pada atribut href di bawah -->
+                        <a href="https://www.mediafire.com/file/nr0535ptv2bfw69/PUBG_MOBILE_FLASH_4.7.0.apk/file?action=check"
+                            target="_blank" rel="noopener noreferrer" class="pubg-card pubg-card-rec spotlight-card"
+                            aria-label="Unduh PUBG Mobile Flash (recommended)">
+                            <span class="pubg-rec-badge">recommended</span>
+                            <div class="pubg-thumb-wrap">
+                                <img src="assets/pubg-flash.jpg" alt="PUBG Mobile Flash" class="pubg-thumb"
+                                    loading="lazy">
+                            </div>
+                            <span class="pubg-name">PUBG MOBILE FLASH</span>
+                            <span class="pubg-dl-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                <span>UNDUH</span>
+                            </span>
+                        </a>
+
+                        <!-- 3. PUBG KOREAN (APK & OBB) — Paste link MediaFire masing-masing pada href di bawah -->
+                        <div class="pubg-card pubg-card-has-obb spotlight-card">
+                            <div class="pubg-thumb-wrap">
+                                <img src="assets/pubg-korean.jpg" alt="PUBG Korean" class="pubg-thumb" loading="lazy">
+                            </div>
+                            <span class="pubg-name">PUBG KOREAN</span>
+                            <div class="pubg-actions">
+                                <!-- Link MediaFire APK PUBG KOREAN -->
+                                <a href="https://www.mediafire.com/file/yffxma8oe56wycj/PUBG_MOBILE_KOREA_4.7.0.apk/file"
+                                    target="_blank" rel="noopener noreferrer" class="pubg-dl-btn"
+                                    aria-label="Unduh PUBG Korean">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                    <span>UNDUH</span>
+                                </a>
+                                <!-- Link MediaFire OBB PUBG KOREAN -->
+                                <a href="https://www.mediafire.com/file/xw0h8df7e3zh8xq/main.21735.com.pubg.krmobile.obb/file?action=check"
+                                    target="_blank" rel="noopener noreferrer" class="pubg-dl-btn pubg-dl-btn-red"
+                                    aria-label="Unduh OBB PUBG Korean">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                    <span>UNDUH OBB</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 4. PUBG TAIWAN — Paste link MediaFire Anda pada atribut href di bawah -->
+                        <a href="https://www.mediafire.com/file/ut3i3nffh0h6ez1/PUBGM_MOBILE_TAIWAN_4.7.0.apk/file?action=check"
+                            target="_blank" rel="noopener noreferrer" class="pubg-card spotlight-card"
+                            aria-label="Unduh PUBG Taiwan">
+                            <div class="pubg-thumb-wrap">
+                                <img src="assets/pubg-taiwan.jpg" alt="PUBG Taiwan" class="pubg-thumb" loading="lazy">
+                            </div>
+                            <span class="pubg-name">PUBG TAIWAN</span>
+                            <span class="pubg-dl-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                <span>UNDUH</span>
+                            </span>
+                        </a>
+
+                        <!-- 5. PUBG VIETNAM — Paste link MediaFire Anda pada atribut href di bawah -->
+                        <a href="https://www.mediafire.com/file/x92cspaymfxp080/PUBGM_MOBILE_VIETNAM_4.7.0.apk/file?action=check"
+                            target="_blank" rel="noopener noreferrer" class="pubg-card spotlight-card"
+                            aria-label="Unduh PUBG Vietnam">
+                            <div class="pubg-thumb-wrap">
+                                <img src="assets/pubg-vietnam.jpg" alt="PUBG Vietnam" class="pubg-thumb" loading="lazy">
+                            </div>
+                            <span class="pubg-name">PUBG VIETNAM</span>
+                            <span class="pubg-dl-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                <span>UNDUH</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Persiapan Wajib Sebelum Pemasangan: Setelan Google Play Store -->
         <section id="playstore-prep" class="prep-section" aria-labelledby="prepSectionTitle">
             <div class="container">
@@ -496,7 +677,8 @@
                         </span>
                         <h2 class="prep-title" id="prepSectionTitle">ATUR PLAY STORE SEBELUM LANJUT KE PEMASANGAN</h2>
                         <p class="prep-subtitle">Ikuti urutan <strong>5 langkah</strong> berikut agar aplikasi dan game
-                            tidak ter-update otomatis oleh Google Play Store. Ketuk gambar mana saja untuk memperbesar.</p>
+                            tidak ter-update otomatis oleh Google Play Store. Ketuk gambar mana saja untuk memperbesar.
+                        </p>
                     </div>
 
                     <div class="prep-steps-grid">
@@ -523,7 +705,8 @@
                             <div class="prep-step-body">
                                 <span class="prep-step-pill">LANGKAH 1</span>
                                 <h3 class="prep-step-title">Buka Google Play Store</h3>
-                                <p class="prep-step-desc">Buka aplikasi <strong>Play Store</strong> di menu utama HP atau
+                                <p class="prep-step-desc">Buka aplikasi <strong>Play Store</strong> di menu utama HP
+                                    atau
                                     tablet Anda seperti yang ditunjukkan tanda panah.</p>
                             </div>
                         </article>
@@ -580,7 +763,8 @@
                                 <span class="prep-step-pill">LANGKAH 3</span>
                                 <h3 class="prep-step-title">Masuk ke Menu Setelan</h3>
                                 <p class="prep-step-desc">Pada jendela menu akun yang muncul, pilih bagian
-                                    <strong>Setelan</strong> (ikon gerigi) di bagian bawah daftar.</p>
+                                    <strong>Setelan</strong> (ikon gerigi) di bagian bawah daftar.
+                                </p>
                             </div>
                         </article>
 
@@ -826,187 +1010,6 @@
                                     <line x1="12" y1="15" x2="12" y2="3"></line>
                                 </svg>
                                 UNDUH LOADER SOLANA 4.7 V1
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Pilihan Unduhan 5 Versi PUBG (No Root) -->
-                    <div id="pubgNoRootSection" class="pubg-downloads" aria-label="Unduhan PUBG No Root">
-                        <div class="feature-card info-card pubg-notice-card spotlight-card" role="alert">
-                            <div class="pubg-notice-accent-bar" aria-hidden="true"></div>
-                            <div class="pubg-notice-head">
-                                <div class="info-badge pubg-notice-badge">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round" aria-hidden="true">
-                                        <path
-                                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
-                                        </path>
-                                        <line x1="12" y1="9" x2="12" y2="13"></line>
-                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                                    </svg>
-                                </div>
-                                <h3 class="elegant-title pubg-notice-title">INFORMASI PENTING &amp; WAJIB DIBACA</h3>
-                                <p class="pubg-notice-lead">Ikuti <strong>4 urutan wajib</strong> berikut sebelum memasang
-                                    Game Assistant &amp; Loader agar tidak terjadi error:</p>
-                            </div>
-
-                            <ol class="pubg-notice-steps">
-                                <li class="pubg-notice-step">
-                                    <span class="pubg-step-num" aria-hidden="true">1</span>
-                                    <div class="pubg-step-content">
-                                        <strong class="pubg-step-title">Hapus PUBG Original Play Store</strong>
-                                        <p class="pubg-step-desc">Uninstall / hapus dulu aplikasi <strong>PUBG Mobile
-                                                bawaan Play Store</strong> yang terpasang di HP Anda.</p>
-                                    </div>
-                                </li>
-                                <li class="pubg-notice-step">
-                                    <span class="pubg-step-num" aria-hidden="true">2</span>
-                                    <div class="pubg-step-content">
-                                        <strong class="pubg-step-title">Wajib Unduh PUBG Dari Sini</strong>
-                                        <p class="pubg-step-desc">Unduh versi PUBG pilihan Anda dari <strong>daftar
-                                                unduhan di bawah ini</strong> (jangan unduh ulang dari Play Store).</p>
-                                    </div>
-                                </li>
-                                <li class="pubg-notice-step">
-                                    <span class="pubg-step-num" aria-hidden="true">3</span>
-                                    <div class="pubg-step-content">
-                                        <strong class="pubg-step-title">Pasang PUBG Terlebih Dahulu</strong>
-                                        <p class="pubg-step-desc">Install file PUBG yang baru diunduh sampai selesai
-                                            (untuk <strong>PUBG Korea</strong>, pasang juga file <strong>OBB</strong>-nya).</p>
-                                    </div>
-                                </li>
-                                <li class="pubg-notice-step">
-                                    <span class="pubg-step-num" aria-hidden="true">4</span>
-                                    <div class="pubg-step-content">
-                                        <strong class="pubg-step-title">Baru Pasang Game Assistant &amp; Loader</strong>
-                                        <p class="pubg-step-desc">Setelah PUBG selesai terpasang, barulah lanjut ke
-                                            tahap pemasangan <strong>Game Assistant 4.7 &amp; Loader Solana</strong>.</p>
-                                    </div>
-                                </li>
-                            </ol>
-                        </div>
-                        <div class="pubg-grid">
-                            <!-- 1. PUBG MOBILE — Paste link MediaFire Anda pada atribut href di bawah -->
-                            <a href="https://www.mediafire.com/file/rbzpyuu0dhp1b20/PUBG_MOBILE_GLOBAL_4.7.0.apk/file?action=check"
-                                target="_blank" rel="noopener noreferrer" class="pubg-card spotlight-card"
-                                aria-label="Unduh PUBG Mobile">
-                                <div class="pubg-thumb-wrap">
-                                    <img src="assets/pubg-mobile.png" alt="PUBG Mobile" class="pubg-thumb"
-                                        loading="lazy">
-                                </div>
-                                <span class="pubg-name">PUBG MOBILE</span>
-                                <span class="pubg-dl-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                        <polyline points="7 10 12 15 17 10"></polyline>
-                                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                                    </svg>
-                                    <span>UNDUH</span>
-                                </span>
-                            </a>
-
-                            <!-- 2. PUBG MOBILE FLASH — Paste link MediaFire Anda pada atribut href di bawah -->
-                            <a href="https://www.mediafire.com/file/nr0535ptv2bfw69/PUBG_MOBILE_FLASH_4.7.0.apk/file?action=check"
-                                target="_blank" rel="noopener noreferrer" class="pubg-card pubg-card-rec spotlight-card"
-                                aria-label="Unduh PUBG Mobile Flash (recommended)">
-                                <span class="pubg-rec-badge">recommended</span>
-                                <div class="pubg-thumb-wrap">
-                                    <img src="assets/pubg-flash.jpg" alt="PUBG Mobile Flash" class="pubg-thumb"
-                                        loading="lazy">
-                                </div>
-                                <span class="pubg-name">PUBG MOBILE FLASH</span>
-                                <span class="pubg-dl-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                        <polyline points="7 10 12 15 17 10"></polyline>
-                                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                                    </svg>
-                                    <span>UNDUH</span>
-                                </span>
-                            </a>
-
-                            <!-- 3. PUBG KOREAN (APK & OBB) — Paste link MediaFire masing-masing pada href di bawah -->
-                            <div class="pubg-card pubg-card-has-obb spotlight-card">
-                                <div class="pubg-thumb-wrap">
-                                    <img src="assets/pubg-korean.jpg" alt="PUBG Korean" class="pubg-thumb"
-                                        loading="lazy">
-                                </div>
-                                <span class="pubg-name">PUBG KOREAN</span>
-                                <div class="pubg-actions">
-                                    <!-- Link MediaFire APK PUBG KOREAN -->
-                                    <a href="https://www.mediafire.com/file/yffxma8oe56wycj/PUBG_MOBILE_KOREA_4.7.0.apk/file"
-                                        target="_blank" rel="noopener noreferrer" class="pubg-dl-btn"
-                                        aria-label="Unduh PUBG Korean">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                            <polyline points="7 10 12 15 17 10"></polyline>
-                                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                                        </svg>
-                                        <span>UNDUH</span>
-                                    </a>
-                                    <!-- Link MediaFire OBB PUBG KOREAN -->
-                                    <a href="https://www.mediafire.com/file/xw0h8df7e3zh8xq/main.21735.com.pubg.krmobile.obb/file?action=check"
-                                        target="_blank" rel="noopener noreferrer" class="pubg-dl-btn pubg-dl-btn-red"
-                                        aria-label="Unduh OBB PUBG Korean">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                            <polyline points="7 10 12 15 17 10"></polyline>
-                                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                                        </svg>
-                                        <span>UNDUH OBB</span>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- 4. PUBG TAIWAN — Paste link MediaFire Anda pada atribut href di bawah -->
-                            <a href="https://www.mediafire.com/file/ut3i3nffh0h6ez1/PUBGM_MOBILE_TAIWAN_4.7.0.apk/file?action=check"
-                                target="_blank" rel="noopener noreferrer" class="pubg-card spotlight-card"
-                                aria-label="Unduh PUBG Taiwan">
-                                <div class="pubg-thumb-wrap">
-                                    <img src="assets/pubg-taiwan.jpg" alt="PUBG Taiwan" class="pubg-thumb"
-                                        loading="lazy">
-                                </div>
-                                <span class="pubg-name">PUBG TAIWAN</span>
-                                <span class="pubg-dl-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                        <polyline points="7 10 12 15 17 10"></polyline>
-                                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                                    </svg>
-                                    <span>UNDUH</span>
-                                </span>
-                            </a>
-
-                            <!-- 5. PUBG VIETNAM — Paste link MediaFire Anda pada atribut href di bawah -->
-                            <a href="https://www.mediafire.com/file/x92cspaymfxp080/PUBGM_MOBILE_VIETNAM_4.7.0.apk/file?action=check"
-                                target="_blank" rel="noopener noreferrer" class="pubg-card spotlight-card"
-                                aria-label="Unduh PUBG Vietnam">
-                                <div class="pubg-thumb-wrap">
-                                    <img src="assets/pubg-vietnam.jpg" alt="PUBG Vietnam" class="pubg-thumb"
-                                        loading="lazy">
-                                </div>
-                                <span class="pubg-name">PUBG VIETNAM</span>
-                                <span class="pubg-dl-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                        <polyline points="7 10 12 15 17 10"></polyline>
-                                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                                    </svg>
-                                    <span>UNDUH</span>
-                                </span>
                             </a>
                         </div>
                     </div>
