@@ -67,6 +67,7 @@
         });
         const pubgSec = document.getElementById('pubgNoRootSection');
         const prepSec = document.getElementById('playstore-prep');
+        const scrollBanner = document.getElementById('norootScrollBanner');
         if (pubgSec) {
             pubgSec.style.display = 'none';
             pubgSec.setAttribute('aria-hidden', 'true');
@@ -74,6 +75,10 @@
         if (prepSec) {
             prepSec.style.display = 'none';
             prepSec.setAttribute('aria-hidden', 'true');
+        }
+        if (scrollBanner) {
+            scrollBanner.style.display = 'none';
+            scrollBanner.setAttribute('aria-hidden', 'true');
         }
     }
 
@@ -89,6 +94,7 @@
         const isNoRoot = (id === 'gameassistant-tutorial' || id === 'blackbox-tutorial');
         const pubgSec = document.getElementById('pubgNoRootSection');
         const prepSec = document.getElementById('playstore-prep');
+        const scrollBanner = document.getElementById('norootScrollBanner');
         if (pubgSec) {
             pubgSec.style.display = isNoRoot ? '' : 'none';
             if (!isNoRoot) pubgSec.setAttribute('aria-hidden', 'true');
@@ -98,6 +104,11 @@
             prepSec.style.display = isNoRoot ? '' : 'none';
             if (!isNoRoot) prepSec.setAttribute('aria-hidden', 'true');
             else prepSec.removeAttribute('aria-hidden');
+        }
+        if (scrollBanner) {
+            scrollBanner.style.display = isNoRoot ? '' : 'none';
+            if (!isNoRoot) scrollBanner.setAttribute('aria-hidden', 'true');
+            else scrollBanner.removeAttribute('aria-hidden');
         }
 
         const target = document.getElementById(id);
