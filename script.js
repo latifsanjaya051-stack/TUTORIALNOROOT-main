@@ -21,8 +21,17 @@
             const videoId = extractYouTubeId(videoUrl);
             if (!el || !videoId) return;
 
-            const thumbUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-            el.style.backgroundImage = `linear-gradient(to bottom, rgba(3,6,15,0.25), rgba(3,6,15,0.72)), url(${thumbUrl})`;
+            const maxres = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+            const hq = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+            const img = new Image();
+            img.onload = function () {
+                const thumb = (img.naturalWidth > 120) ? maxres : hq;
+                el.style.backgroundImage = `linear-gradient(to bottom, rgba(3,6,15,0.06), rgba(3,6,15,0.42)), url(${thumb})`;
+            };
+            img.onerror = function () {
+                el.style.backgroundImage = `linear-gradient(to bottom, rgba(3,6,15,0.06), rgba(3,6,15,0.42)), url(${hq})`;
+            };
+            img.src = maxres;
             el.style.backgroundSize = 'cover';
             el.style.backgroundPosition = 'center';
 
@@ -35,7 +44,7 @@
         }
 
         createVideoEmbed('videoPreview', 'https://youtu.be/nFo4WVc9ZX4?si=lo-ekDOfVK6zr8ZT');
-        createVideoEmbed('videoPreview2', 'https://youtu.be/XmzBGlpB5Eg?si=SEooZMPBqBpqjsly');
+        createVideoEmbed('videoPreview2', 'https://youtu.be/PwHlj-u2AME?si=rLqf9vGmvhIEiCyc');
         createVideoEmbed('videoPreviewLogin', 'https://youtu.be/tTNvWIvHrzQ?si=TwCB0ux2y74s7kYX');
     }
 
@@ -66,15 +75,10 @@
             }
         });
         const pubgSec = document.getElementById('pubgNoRootSection');
-        const prepSec = document.getElementById('playstore-prep');
         const scrollBanner = document.getElementById('norootScrollBanner');
         if (pubgSec) {
             pubgSec.style.display = 'none';
             pubgSec.setAttribute('aria-hidden', 'true');
-        }
-        if (prepSec) {
-            prepSec.style.display = 'none';
-            prepSec.setAttribute('aria-hidden', 'true');
         }
         if (scrollBanner) {
             scrollBanner.style.display = 'none';
@@ -93,17 +97,11 @@
 
         const isNoRoot = (id === 'gameassistant-tutorial' || id === 'blackbox-tutorial');
         const pubgSec = document.getElementById('pubgNoRootSection');
-        const prepSec = document.getElementById('playstore-prep');
         const scrollBanner = document.getElementById('norootScrollBanner');
         if (pubgSec) {
             pubgSec.style.display = isNoRoot ? '' : 'none';
             if (!isNoRoot) pubgSec.setAttribute('aria-hidden', 'true');
             else pubgSec.removeAttribute('aria-hidden');
-        }
-        if (prepSec) {
-            prepSec.style.display = isNoRoot ? '' : 'none';
-            if (!isNoRoot) prepSec.setAttribute('aria-hidden', 'true');
-            else prepSec.removeAttribute('aria-hidden');
         }
         if (scrollBanner) {
             scrollBanner.style.display = isNoRoot ? '' : 'none';
@@ -928,7 +926,7 @@
                 const sectionId = targetId.substring(1);
                 if (TUTORIAL_IDS.indexOf(sectionId) !== -1) {
                     showTutorialSection(sectionId);
-                } else if (sectionId === 'pubgNoRootSection' || sectionId === 'playstore-prep') {
+                } else if (sectionId === 'pubgNoRootSection' || sectionId === 'rules-cheat' || sectionId === 'login-twitter-fb') {
                     showTutorialSection('gameassistant-tutorial');
                 }
                 const target = document.querySelector(targetId);
@@ -938,6 +936,21 @@
                 }
             });
         });
+
+        if (window.location.hash) {
+            const initialId = window.location.hash.substring(1);
+            if (TUTORIAL_IDS.indexOf(initialId) !== -1) {
+                showTutorialSection(initialId);
+                const cm = document.getElementById('choiceModal');
+                if (cm) cm.setAttribute('hidden', '');
+                document.body.style.overflow = '';
+            } else if (initialId === 'pubgNoRootSection' || initialId === 'rules-cheat' || initialId === 'login-twitter-fb') {
+                showTutorialSection('gameassistant-tutorial');
+                const cm = document.getElementById('choiceModal');
+                if (cm) cm.setAttribute('hidden', '');
+                document.body.style.overflow = '';
+            }
+        }
     }
 
     /* ---------- 11. Animated Counters ---------- */
