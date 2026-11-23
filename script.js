@@ -46,6 +46,8 @@
         createVideoEmbed('videoPreview', 'https://youtu.be/nFo4WVc9ZX4?si=lo-ekDOfVK6zr8ZT');
         createVideoEmbed('videoPreview2', 'https://youtu.be/PwHlj-u2AME?si=rLqf9vGmvhIEiCyc');
         createVideoEmbed('videoPreviewLogin', 'https://youtu.be/tTNvWIvHrzQ?si=TwCB0ux2y74s7kYX');
+        createVideoEmbed('videoPreviewSkinNoRoot', 'https://youtu.be/foFMK9QxKoM?si=tX8NqOVoNvnZDKWh');
+        createVideoEmbed('videoPreviewSkinRoot', 'https://youtu.be/ztTM76_qbjo?si=sbbYBBB0HWSt8StT');
     }
 
     /* ---------- 2. Subtle Ambient Particles ---------- */
@@ -926,8 +928,10 @@
                 const sectionId = targetId.substring(1);
                 if (TUTORIAL_IDS.indexOf(sectionId) !== -1) {
                     showTutorialSection(sectionId);
-                } else if (sectionId === 'pubgNoRootSection' || sectionId === 'rules-cheat' || sectionId === 'login-twitter-fb') {
+                } else if (sectionId === 'pubgNoRootSection' || sectionId === 'rules-cheat' || sectionId === 'login-twitter-fb' || sectionId === 'skin-hack-noroot') {
                     showTutorialSection('gameassistant-tutorial');
+                } else if (sectionId === 'skin-hack-root') {
+                    showTutorialSection('root-tutorial');
                 }
                 const target = document.querySelector(targetId);
                 if (target) {
@@ -944,8 +948,13 @@
                 const cm = document.getElementById('choiceModal');
                 if (cm) cm.setAttribute('hidden', '');
                 document.body.style.overflow = '';
-            } else if (initialId === 'pubgNoRootSection' || initialId === 'rules-cheat' || initialId === 'login-twitter-fb') {
+            } else if (initialId === 'pubgNoRootSection' || initialId === 'rules-cheat' || initialId === 'login-twitter-fb' || initialId === 'skin-hack-noroot') {
                 showTutorialSection('gameassistant-tutorial');
+                const cm = document.getElementById('choiceModal');
+                if (cm) cm.setAttribute('hidden', '');
+                document.body.style.overflow = '';
+            } else if (initialId === 'skin-hack-root') {
+                showTutorialSection('root-tutorial');
                 const cm = document.getElementById('choiceModal');
                 if (cm) cm.setAttribute('hidden', '');
                 document.body.style.overflow = '';
