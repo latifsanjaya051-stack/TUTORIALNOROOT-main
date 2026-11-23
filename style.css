@@ -3125,23 +3125,32 @@ a.pubg-dl-btn.pubg-dl-btn-red:hover {
 .reveal-scale,
 .reveal-right {
     opacity: 0;
-    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.18s ease-out, transform 0.18s ease-out;
     will-change: opacity, transform;
 }
 
 .reveal {
-    transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 8px, 0);
 }
 
 .reveal-scale {
-    transform: scale(0.97) translate3d(0, 14px, 0);
+    transform: scale(0.99) translate3d(0, 6px, 0);
 }
 
 .reveal-right {
-    transform: translate3d(22px, 0, 0);
+    transform: translate3d(10px, 0, 0);
 }
 
-.revealed {
+.revealed,
+#gameassistant-tutorial .reveal,
+#gameassistant-tutorial .reveal-scale,
+#gameassistant-tutorial .reveal-right,
+#pubgNoRootSection .reveal,
+#pubgNoRootSection .reveal-scale,
+#pubgNoRootSection .reveal-right,
+#norootScrollBanner .reveal,
+#norootScrollBanner .reveal-scale,
+#norootScrollBanner .reveal-right {
     opacity: 1 !important;
     transform: translate3d(0, 0, 0) scale(1) !important;
 }

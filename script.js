@@ -115,15 +115,14 @@
         if (target) {
             target.style.display = '';
             target.removeAttribute('aria-hidden');
-            // Ensure cards inside newly shown section animate in smoothly
-            requestAnimationFrame(function () {
-                const list = [target];
-                if (isNoRoot && pubgSec) list.push(pubgSec);
-                if (isNoRoot && prepSec) list.push(prepSec);
-                list.forEach(function (sec) {
-                    sec.querySelectorAll('.reveal, .reveal-scale, .reveal-right').forEach(function (item) {
-                        item.classList.add('revealed');
-                    });
+            // Tampilkan langsung semua kartu di bagian aktif agar tidak lambat saat di-scroll
+            const list = [target];
+            if (isNoRoot && pubgSec) list.push(pubgSec);
+            if (isNoRoot && scrollBanner) list.push(scrollBanner);
+            list.forEach(function (sec) {
+                sec.classList.add('revealed');
+                sec.querySelectorAll('.reveal, .reveal-scale, .reveal-right').forEach(function (item) {
+                    item.classList.add('revealed');
                 });
             });
         }
@@ -785,9 +784,13 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+        }, { threshold: 0.01, rootMargin: '250px 0px 250px 0px' });
 
         targets.forEach(function (t) {
+            if (t[0].closest('#gameassistant-tutorial, #pubgNoRootSection, #norootScrollBanner')) {
+                t[0].classList.add('revealed');
+                return;
+            }
             t[0].classList.add(t[1]);
             observer.observe(t[0]);
         });
