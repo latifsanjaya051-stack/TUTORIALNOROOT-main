@@ -11,7 +11,7 @@
     /* ---------- 1. Pemutar Video YouTube Facade & Lazy Load ---------- */
     function initVideoLoaders() {
         function extractYouTubeId(url) {
-            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|shorts\/|watch\?v=|\&v=)([^#\&\?]*).*/;
             const match = url.match(regExp);
             return match && match[2].length === 11 ? match[2] : null;
         }
@@ -47,6 +47,7 @@
         createVideoEmbed('videoPreview2', 'https://youtu.be/PwHlj-u2AME?si=rLqf9vGmvhIEiCyc');
         createVideoEmbed('videoPreviewLogin', 'https://youtu.be/tTNvWIvHrzQ?si=TwCB0ux2y74s7kYX');
         createVideoEmbed('videoPreviewSkinNoRoot', 'https://youtu.be/foFMK9QxKoM?si=tX8NqOVoNvnZDKWh');
+        createVideoEmbed('videoPreviewSkinPushMode', 'https://youtube.com/shorts/UI3hzmY9eCU?si=8NY0uEFZBH3BdfKs');
         createVideoEmbed('videoPreviewSkinRoot', 'https://youtu.be/ztTM76_qbjo?si=sbbYBBB0HWSt8StT');
     }
 
